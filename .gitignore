@@ -1,4 +1,29 @@
-# Build folder and log file
-build/
-build.log
+# generic files to ignore
+# backup files (*~) and vim swap file (.swp), MacOS dir file (.DS_Store)
+# OS specific files
 *~
+*.lock
+.DS_Store
+.*.swp
+*.out
+Thumbs.db
+
+# IDE files to ignore (Netbeans, Eclipse, Aptana)
+nbproject/
+.build/
+build.log
+.buildpath
+.classpath
+.project
+.settings
+.settings/
+.idea/
+
+# ignore generated .class files
+*.class
+
+# ignore TrashBouncer-Distributions
+TrashBouncer*.zip
+
+# except this file
+!.gitignore
