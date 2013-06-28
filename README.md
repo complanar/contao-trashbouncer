@@ -1,4 +1,4 @@
-# contao-trashbouncer
+# TrashBouncer Spamfilter (trashbouncer)
 
 TrashBouncer Spamfilter Module for Contao CMS.
 
