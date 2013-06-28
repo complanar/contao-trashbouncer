@@ -1,0 +1,11 @@
+<h2 class="sub_headline tb-import"><?php echo $this->title; ?></h2>
+<?php if ($this->errors): foreach ($this->errors as $msg): ?>
+  <div class="tl_error tb-import"><?php echo $msg; ?></div>
+<?php endforeach; endif; ?>
+<?php if ($this->confirmations): foreach ($this->confirmations as $msg): ?>
+  <div class="tl_confirm tb-import"><?php echo $msg; ?></div>
+<?php endforeach; endif; ?>
+<div class="tb-job-content tb-import">
+  <?php echo $this->content; ?>
+</div>
+

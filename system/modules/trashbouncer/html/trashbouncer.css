@@ -1,0 +1,124 @@
+body {
+	
+}
+
+table.mostoftentokens, table.relevanttokens {
+  /*width: 100%;*/
+}
+
+td.mostoftentokens, td.relevanttokens {
+  vertical-align: top;
+}
+
+table.mostoftentokens td, table.mostoftentokens th, table.relevanttokens td, table.relevanttokens th {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+table.mostoftentokens .tl_label, table.relevanttokens .tl_label {
+  margin-right: 0;
+}
+
+.tb_classification td.label {
+  word-wrap: no-wrap;
+}
+
+.tb_classification td.content {
+  /*width: 80%;*/
+}
+
+.tl_bg .tl_bg {
+  background-color: #FFF;
+}
+
+.tb_num, .tb_actions, .tb_singleprobability {
+  text-align: right;
+}
+
+.tb-icon {
+  background-position: 3px center;
+  background-repeat: no-repeat;
+  padding: 1px 3px 1px 23px;
+}
+
+.tb-log {
+  background-image: url('icons/apps/log.png');
+}
+
+.tb-specialtokens {
+  background-image: url('icons/apps/specialtokens.png');
+}
+
+.tb-maintenance {
+  background-image: url('icons/apps/maintenance.png');
+}
+
+.tb-stopword {
+  background-image: url('icons/status/stopword.png');
+}
+
+.tb-ignoreword {
+  background-image: url('icons/status/ignoreword.png');
+}
+
+.tb-icon-standalone {
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1px;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -2000em;
+  text-align: left;
+  /*font-size: 0;*/
+}
+
+.tl_listing .tb-icon-standalone {
+  position: relative;
+  top: 5px;
+}
+
+.tb-mark-as-spam {
+  background-image: url('icons/actions/mail-mark-junk.png');
+}
+
+.tb-mark-as-ham {
+  background-image: url('icons/actions/mail-mark-not-junk.png');
+}
+
+.tb-mark-as-unknown {
+  background-image: url('icons/actions/mail-mark-unsure-junk.png');
+}
+
+.tb-addignoreword {
+  background-image: url('icons/actions/ignoreword-add.png');
+}
+
+.tb-delignoreword {
+  background-image: url('icons/actions/ignoreword-delete.png');
+}
+
+.tb-addstopword {
+  background-image: url('icons/actions/stopword-add.png');
+}
+
+.tb-delstopword {
+  background-image: url('icons/actions/stopword-delete.png');
+}
+
+h2.sub_headline.tb-export {
+  background-image: url('icons/actions/document-export.png');
+}
+
+h2.sub_headline.tb-import {
+  background-image: url('icons/actions/document-import.png');
+}
+
+h2.sub_headline.tb-reset {
+  background-image: url('icons/actions/edit-clear.png');
+}
+
+h2.sub_headline.tb-delete {
+  background-image: url('icons/actions/edit-delete.png');
+}

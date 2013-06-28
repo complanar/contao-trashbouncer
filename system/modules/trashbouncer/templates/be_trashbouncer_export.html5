@@ -1,0 +1,27 @@
+<h2 class="sub_headline tb-export"><?php echo $this->title; ?></h2>
+<div class="tb-job-content tb-export">
+  <form action="<?php echo $this->action; ?>" id="tl_trashbouncer_maintenance_export" class="tl_form" method="post">
+  <div class="tl_formbody_edit">
+    <?php if ($this->msg): echo $this->msg; endif; ?>
+    <?php if (!$this->success): ?>
+      <input type="hidden" name="FORM_SUBMIT" value="tl_trashbouncer_maintenance_export">
+      <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+      <p><?php echo $this->export; ?><p>
+      <?php echo $this->langWidget->generateWithError(); ?>
+      <?php if ($this->langWidget->help): ?>
+        <p class="tl_help tl_tip"><?php echo $this->langWidget->help; ?></p>
+      <?php endif; ?>
+      <h3><?php echo $this->exportTypeWidget->generateLabel(); echo $this->exportTypeWidget->xlabel; ?></h3>
+      <?php echo $this->exportTypeWidget->generateWithError(); ?>
+      <?php if ($this->exportTypeWidget->help): ?>
+        <p class="tl_help tl_tip"><?php echo $this->exportTypeWidget->help; ?></p>
+      <?php endif; ?>
+    <?php endif; ?>
+  </div>
+  <div class="tl_submit_container" style="background-color: transparent;">
+    <?php if (!$this->success): ?><input type="submit" name="doexport" id="doexport" class="tl_submit" accesskey="e" value="<?php echo $this->submit; ?>">&nbsp;<?php endif; ?>
+    <?php if ($this->isActive): ?><input type="submit" name="goBack" id="goBack" class="tl_submit" accesskey="b" value="<?php echo $this->back; ?>"><?php endif; ?>
+  </div>
+  </form>
+</div>
+

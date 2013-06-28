@@ -1,0 +1,7 @@
+<div id="tl_buttons">
+  <a title="<?php echo $this->logTitle; ?>" class="tb-icon tb-log" href="<?php echo $this->logHref; ?>"><?php echo $this->logText; ?></a>
+  &nbsp; :: &nbsp;
+  <a onclick="Backend.getScrollOffset();" title="<?php echo $this->specialtokensTitle; ?>" class="tb-icon tb-specialtokens" href="<?php echo $this->specialtokensHref; ?>"><?php echo $this->specialtokensText; ?></a> 
+</div>
+<?php echo $this->content; ?>
+

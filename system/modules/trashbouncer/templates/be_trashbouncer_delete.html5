@@ -1,0 +1,59 @@
+<h2 class="sub_headline tb-delete"><?php echo $this->title; ?></h2>
+<div class="tb-job-content tb-delete">
+<?php if ($this->success || $this->error): ?>
+    <form action="<?php echo $this->action; ?>" id="tl_trashbouncer_maintenance_delete" class="tl_form" method="post">
+      <div class="tl_formbody_edit">
+        <input type="hidden" name="FORM_SUBMIT" value="tl_trashbouncer_maintenance_delete">
+        <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+        <?php if ($this->success): ?>
+        <h3><?php echo $this->success[0]; ?></h3>
+        <p class="confirm"><?php echo $this->success[1]; ?></p>
+        <?php endif; ?>
+        <?php if ($this->error): ?>
+        <h3><?php echo $this->error[0]; ?></h3>
+        <p class="error"><?php echo $this->error[1]; ?></p>
+        <?php endif; ?>
+      </div>
+      <div class="tl_submit_container" style="background-color: transparent;">
+        <input type="submit" name="goBack" id="goBack" class="tl_submit" accesskey="b" value="<?php echo $this->back; ?>">
+      </div>
+    </form>
+  <?php elseif (!$this->confirm): ?>
+    <form action="<?php echo $this->action; ?>" id="tl_trashbouncer_maintenance_delete" class="tl_form" method="post">
+      <div class="tl_formbody_edit">
+        <input type="hidden" name="FORM_SUBMIT" value="tl_trashbouncer_maintenance_delete">
+        <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+        <p><?php echo $this->delete; ?><p>
+        <?php echo $this->langWidget->generateWithError(); ?>
+        <?php if ($this->langWidget->help): ?>
+          <p class="tl_help tl_tip"><?php echo $this->langWidget->help; ?></p>
+        <?php endif; ?>
+        <h3><?php echo $this->backupWidget->generateLabel(); echo $this->backupWidget->xlabel; ?></h3>
+        <?php echo $this->backupWidget->generateWithError(); ?>
+        <?php if ($this->backupWidget->help): ?>
+          <p class="tl_help tl_tip"><?php echo $this->backupWidget->help; ?></p>
+        <?php endif; ?>
+      </div>
+      <div class="tl_submit_container" style="background-color: transparent;">
+        <input type="submit" name="dodelete" id="dodelete" class="tl_submit" accesskey="s" value="<?php echo $this->submit; ?>">
+        <?php if ($this->isActive): ?>&nbsp;<input type="submit" name="goBack" id="goBack" class="tl_submit" accesskey="b" value="<?php echo $this->back; ?>"><?php endif; ?>
+      </div>
+    </form>
+  <?php else: ?>
+    <form action="<?php echo $this->action; ?>" id="tl_trashbouncer_maintenance_delete" class="tl_form" method="post">
+      <div class="tl_formbody_edit">
+        <input type="hidden" name="FORM_SUBMIT" value="tl_trashbouncer_maintenance_delete">
+        <input type="hidden" name="FORM_CONFIRM" value="1">
+        <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+        <input type="hidden" name="languages_delete" value="<?php echo $this->languages_delete; ?>">
+        <input type="hidden" name="backup_delete" value="<?php echo $this->backup_delete; ?>">
+        <?php echo $this->confirm; ?>
+      </div>
+      <div class="tl_submit_container" style="background-color: transparent;">
+        <input type="submit" name="doconfirm" id="doconfirm" class="tl_submit" accesskey="s" value="<?php echo $this->submitConfirm; ?>">
+        <?php if ($this->isActive): ?>&nbsp;<input type="submit" name="goBack" id="goBack" class="tl_submit" accesskey="b" value="<?php echo $this->cancel; ?>"><?php endif; ?>
+      </div>
+    </form>
+  <?php endif; ?>
+</div>
+

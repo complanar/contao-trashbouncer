@@ -1,0 +1,146 @@
+<div id="tl_buttons">
+<a href="<?php echo $this->goBackHref; ?>" class="header_back" title="<?php echo $this->goBack; ?>" accesskey="b" onclick="Backend.getScrollOffset()"><?php echo $this->goBack; ?></a>
+</div>
+
+<h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+
+<div id="tl_trashbouncer_log_details">
+  <table class="tl_show tb_log_details">
+    <tbody>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thId ?>: </span></td>
+        <td class="content"><?php echo $this->id ?></td>
+      </tr>
+      <tr>
+        <td class="tl_bg label"><span class="tl_label"><?php echo $this->thInfo ?>: </span></td>
+        <td class="tl_bg content"><?php echo $this->info ?></td>
+      </tr>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thText ?>: </span></td>
+        <td class="content"><?php echo $this->text ?></td>
+      </tr>
+      <tr>
+        <td class="tl_bg label"><span class="tl_label"><?php echo $this->thCat ?>: </span></td>
+        <td class="tl_bg content"><?php echo $this->cat ?></td>
+      </tr>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thLang ?>: </span></th>
+        <td class="content"><?php echo $this->lang ?></td>
+      </tr>
+      <tr>
+        <td class="tl_bg label"><span class="tl_label"><?php echo $this->thIp ?>: </span></td>
+        <td class="tl_bg content"><?php echo $this->ip ?></td>
+      </tr>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thTstamp ?>: </span></td>
+        <td class="content"><?php echo $this->tstamp ?></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2 class="sub_headline tb_classification"><?php echo $this->thClassification ?></h2>
+  <table class="tl_show tb_classification">
+    <tbody>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thIsSpam ?>: </span></td>
+        <td class="content"><?php echo $this->isSpam ?></td>
+      </tr>
+      <tr>
+        <td class="tl_bg label"><span class="tl_label"><?php echo $this->thProbability ?>: </span></td>
+        <td class="tl_bg content"><?php echo $this->probability . ' (' . $this->thPivotPoint . ': ' . $this->pivotPoint . ')'?></td>
+      </tr>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thTokenscount ?>: </span></td>
+        <td class="content"><?php echo $this->tokenscount ?></td>
+      </tr>
+      <tr>
+        <td class="tl_bg label"><span class="tl_label"><?php echo $this->thStopwordscount ?>: </span></td>
+        <td class="tl_bg content"><?php echo $this->stopwordscount . ' (' . $this->thAllowed. ': ' . $this->stopwordsMax . ')'?></td>
+      </tr>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thIgnorewordscount ?>: </span></td>
+        <td class="content"><?php echo $this->ignorewordscount ?></td>
+      </tr>
+      <tr>
+        <td class="tl_bg label"><span class="tl_label"><?php echo $this->thSmalltokenscount ?>: </span></td>
+        <td class="tl_bg content"><?php echo $this->smalltokenscount ?></td>
+      </tr>
+      <tr>
+        <td class="label"><span class="tl_label"><?php echo $this->thLargetokenscount ?>: </span></td>
+        <td class="content"><?php echo $this->largetokenscount ?></td>
+      </tr>
+      <tr>
+        <td class="tl_bg label"><span class="tl_label"><?php echo $this->thFataltokenscount ?>: </span></td>
+        <td class="tl_bg content"><?php echo $this->fataltokenscount ?></td>
+      </tr>
+      <tr>
+        <td class="mostoftentokens label"><span class="tl_label"><?php echo $this->thMostoftentokens ?>: </span></td>
+        <td class="mostoftentokens content">
+          <table class="mostoftentokens">
+            <thead>
+              <tr>
+                <td class="tb_num"><span class="tl_label"><?php echo $this->count ?></span></td>
+                <td class="tb_token"><span class="tl_label"><?php echo $this->token ?></span></td>
+                <td class="tb_actions"><span class="tl_label"><?php echo $this->actions ?></span></td>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $i = 0;
+                foreach ($this->mostoftentokens as $k=>$v) {
+                  $i = abs(--$i);
+                  $bg = ($i)? ' tl_bg' : '';
+                  echo '<tr><td class="tb_num'.$bg.'">' . $v['num'] . '</td><td class="tb_token'.$bg.'">' . $k . '</td><td class="tb_actions'.$bg.'">';
+                  foreach ($v['actions'] as $key=>$value) {
+                    echo '<a class="tb-icon-standalone tb-'.$value['action'].$key.'" href="'.$value['href'].'" onclick="Backend.getScrollOffset();" title="'.$value['title'].'">'.$value['text'].'</a>';
+                  }
+                  echo '</td></tr>';
+                }
+              ?>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="relevanttokens tl_bg label"><span class="tl_label"><?php echo $this->thRelevanttokens ?>: </span></td>
+        <td class="relevanttokens tl_bg content">
+          <table class="relevanttokens">
+            <thead>
+              <tr>
+                <td class="tb_num"><span class="tl_label"><?php echo $this->relevance ?></span></td>
+                <td class="tb_singleprobability"><span class="tl_label"><?php echo $this->singleProbability ?></span></td>
+                <td class="tb_token"><span class="tl_label"><?php echo $this->token ?></span></td>
+                <td class="tb_actions"><span class="tl_label"><?php echo $this->actions ?></span></td>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $i = 0;
+                foreach ($this->relevanttokens as $k=>$v) {
+                  $i = abs(--$i);
+                  $bg = ($i)? ' tl_bg' : '';
+                  echo '<tr><td class="tb_num'.$bg.'">' . sprintf('%.2f%%', $v['num'] * 100) . '</td><td class="tb_singleprobability'.$bg.'">' . sprintf('%.2f%%', $v['probability'] * 100) . '</td><td class="tb_token'.$bg.'">' . $k . '</td><td class="tb_actions'.$bg.'">';
+                  foreach ($v['actions'] as $key=>$value) {
+                    echo '<a class="tb-icon-standalone tb-'.$value['action'].$key.'" href="'.$value['href'].'" onclick="Backend.getScrollOffset();" title="'.$value['title'].'">'.$value['text'].'</a>';
+                  }
+                  echo '</td></tr>';
+                }
+              ?>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="tl_formbody_submit">
+    <div class="tl_submit_container">
+      <?php
+        foreach ($this->logActions as $k=>$v) {
+          echo sprintf('<a href="%s" title="%s" class="tl_submit"%s>%s</a>&nbsp;',
+          $v['href'], $v['title'], $v['attributes'], $v['label']);
+        }
+      ?>
+    </div>
+  </div>
+</div>
